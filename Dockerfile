@@ -12,8 +12,6 @@ USER node
 
 RUN npm install
 
-COPY --chown=dtudor200:dtudor200 . .
-
 EXPOSE 8080
 
 CMD [ "node", "server.js" ]
