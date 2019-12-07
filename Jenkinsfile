@@ -20,15 +20,15 @@ node {
                
                echo 'Build bit here'
                 
-           stage "Static Code Test"
+           stage "Static Code Test" {
 
                build 'Static_Code_Test'
                echo 'Static Code Test'
-             
-           stage "Build Image"
-               sh 'docker build -t dtudor200/courswork2:1.0.0 .'
+              }
+           stage "Build Image" {
+               sh 'docker build -t dtudor200/coursework2:1.0.0 .'
                echo 'Build Docker Image'
-
+             }
            stage "Push Image" {
                withCredentials([string(credentialsId: 'docker', variable: 'docker')]) {
                sh "docker login -u dtudor200 -p ${docker}"
