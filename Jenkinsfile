@@ -5,11 +5,16 @@ node {
            if (i==0)
            {
                git url : 'https://github.com/dtudor200/coursework_2.git'
-               echo 'Running on Stage #0'
+               echo 'Checkout SCM'
            }
            else {
-               build 'Master_Build_Job'
-               echo 'Running on Stage #1'
-           }
+               echo 'Build bit here'
+
+               build 'Static_Code_Test'
+               echo 'Static Code Test'
+           
+              
+}
+
       }
 }
