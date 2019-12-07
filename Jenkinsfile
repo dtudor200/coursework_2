@@ -26,13 +26,15 @@ node {
                echo 'Static Code Test'
              
            stage "Build Image"
-               dockerImage = ''
-               dockerImage = docker.build.registry + ":$BUILD_NUMBER"
+               sh 'docker build -t dtudor200/courswork2:1.0.0 .'
                echo 'Build Docker Image'
 
-           stage "Push Image"
-               docker.withRegistry( '', registryCredential ) {
-               dockerImage.push()
+           stage "Push Image" {
+               withCredentials([string(credentialsId: 'docker', variable: 'docker')]) {
+               sh "docker login -u dtudor200 -p ${docker}"
+               }
+               
+               sh 'docker push dtudor200/coursework2:1.0.0'
                echo 'Push Image to Docker Hub'
               }             
 }
