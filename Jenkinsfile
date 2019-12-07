@@ -3,7 +3,7 @@ pipeline {
     registry = "dtudor200/coursework2"
     registryCredential = 'docker'
     }
-
+}
 node {
       for (i=0; i<2; i++) { 
            stage "Checkout SCM"
