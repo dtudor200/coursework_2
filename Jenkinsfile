@@ -1,3 +1,11 @@
+environment {
+    registry = "dtudor200/coursework2"
+    registryCredential = 'docker'
+}
+
+
+
+
 node {
       for (i=0; i<2; i++) { 
            stage "Checkout SCM"
@@ -18,11 +26,11 @@ node {
                echo 'Static Code Test'
              
            stage "Build Image"
-               sh 'docker build -t dtudor200/my-app:2.0.0 .'
+               sh 'docker build -t registry + :1.0.0 .'
                echo 'Build Docker Image'
 
            stage "Push Image"
-               docker.withRegistry(dtudor200/coursework2, docker ) {
+               docker.withRegistry( '', registryCredential ) {
                sh 'docker push dtudor200/my-app:2.0.0'
                echo 'Push Image to Docker Hub'
               }             
