@@ -7,7 +7,7 @@ node {
                git url : 'https://github.com/dtudor200/coursework_2.git'
                echo 'Checkout SCM'
            }
-           
+         else {           
            stage "Build Code"
                
                echo 'Build bit here'
