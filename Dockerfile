@@ -12,7 +12,7 @@ USER node
 
 RUN npm install
 
-COPY --chown=node:node . .
+COPY --chown=dtudor200:dtudor200 . .
 
 EXPOSE 8080
 
