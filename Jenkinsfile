@@ -28,10 +28,10 @@ node {
                echo 'Build Docker Image'
 
            stage "Push Image"
-               docker.withRegistry( 'registry', registryCredential )
+               docker.withRegistry( registry, registryCredential ) {
                sh 'docker push dtudor200/my-app:2.0.0'
                echo 'Push Image to Docker Hub'
-                           
+              }             
 }
 
       }
