@@ -1,11 +1,3 @@
-environment {
-    registry = "dtudor200/coursework2"
-    registryCredential = 'docker'
-}
-
-
-
-
 node {
       for (i=0; i<2; i++) { 
            stage "Checkout SCM"
@@ -29,8 +21,8 @@ node {
                echo 'Build Docker Image'
              
            stage "Push Image" 
-               withCredentials([string(credentialsId: 'docker', variable: 'docker')]) {
-               sh "docker login -u dtudor200 -p ${docker}"
+               withCredentials([string(credentialsId: 'docker', variable: 'dockerhub')]) {
+               sh "docker login -u dtudor200 -p ${dockerhub}"
                }
                
                sh 'docker push dtudor200/coursework2:1.0.0'
