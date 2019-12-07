@@ -1,9 +1,3 @@
-pipeline {
-  environment {
-    registry = "dtudor200/coursework2"
-    registryCredential = 'docker'
-    }
-
 node {
       for (i=0; i<2; i++) { 
            stage "Checkout SCM"
@@ -28,12 +22,11 @@ node {
                echo 'Build Docker Image'
 
            stage "Push Image"
-               docker.withRegistry( registry, registryCredential ) {
+               docker.withRegistry(dtudor200/coursework2, docker ) {
                sh 'docker push dtudor200/my-app:2.0.0'
                echo 'Push Image to Docker Hub'
               }             
 }
 
       }
-}
-}
+
