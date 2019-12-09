@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: coursework2
-        image: mdtudor200/coursework2:v1
+        image: dtudor200/coursework2:1.0.0
         imagePullPolicy: Always
         ports:
         - containerPort: 80
