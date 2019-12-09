@@ -7,7 +7,7 @@ WORKDIR /home/node/app
 
 COPY server.js ./
 COPY package.json ./
-COPY deploment.yml ./
+COPY deployment.yml ./
 
 USER node
 
