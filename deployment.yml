@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: coursework2
-  namespace: coursework2
 spec:
   replicas: 3
   selector:
