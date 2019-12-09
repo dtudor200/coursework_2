@@ -27,8 +27,14 @@ node {
                
                sh 'docker push dtudor200/coursework2:1.0.0'
                echo 'Push Image to Docker Hub'
-              }             
 
+
+           stage "Deploy to Kube"
+              build 'Kubernettes'
+              echo 'Deploy to Kubernettes'
+          
+              }             
+             
 
       }
 }
