@@ -1,23 +1,22 @@
-node {
-      for (i=0; i<2; i++) { 
+pipeline {
+  environment {
+    registry = "DTUDOR200/coursework2"
+    registryCredential = 'dockerhub'
+  }
+
+  agent any
+
+node {     
            stage "Checkout SCM"
-           print 'Hello, world !'
-           if (i==0)
-           {
                git url : 'https://github.com/dtudor200/coursework_2.git'
                echo 'Checkout SCM'
-           }
-         else {           
-           stage "Build Code"
-               
-               echo 'Build bit here'
-                
+                              
            stage "Static Code Test" 
                build 'Static_Code_Test'
                echo 'Static Code Test'
               
            stage "Build Image" 
-               sh 'docker build -t dtudor200/coursework2:1.0.0 .'
+               sh 'docker build -t dtudor200/coursework2:$BUILD_NUMBER .'
                echo 'Build Docker Image'
              
            stage "Push Image" 
@@ -25,7 +24,7 @@ node {
                sh "docker login -u dtudor200 -p ${dockerhub}"
                }
                
-               sh 'docker push dtudor200/coursework2:1.0.0'
+               sh 'docker push dtudor200/coursework2:$BUILD_NUMBER'
                echo 'Push Image to Docker Hub'
 
 
@@ -36,5 +35,4 @@ node {
               }             
              
 
-      }
-}
+      
