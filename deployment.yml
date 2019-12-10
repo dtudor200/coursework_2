@@ -18,8 +18,17 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-        env:
-          - name: MY_NODE_NAME
-            valueFrom:
-              fieldRef:
-                fieldPath: spec.nodeName
+      - env:
+        - name: MY_NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: MY_POD_IP
+          valueFrom:
+            fieldRef:
+               fieldPath: status.podIP
+        - name: MY_POD_UID
+          valueFrom:
+            fieldRef:
+              fieldPath: metatdata.uid
+
