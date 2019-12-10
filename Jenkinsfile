@@ -1,11 +1,3 @@
-pipeline {
-  environment {
-    registry = "DTUDOR200/coursework2"
-    registryCredential = 'dockerhub'
-  }
-
-  agent any
-
 node {     
            stage "Checkout SCM"
                git url : 'https://github.com/dtudor200/coursework_2.git'
@@ -32,7 +24,4 @@ node {
               build 'Kubernettes'
               echo 'Deploy to Kubernettes'
           
-              }             
-             
-}
-      
+              }
