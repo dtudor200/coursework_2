@@ -17,6 +17,7 @@ node {
                }
                
                sh 'docker push dtudor200/coursework2:$BUILD_NUMBER'
+               sh 'docker push dtudor200/coursework2:latest'
                echo 'Push Image to Docker Hub'
 
 
