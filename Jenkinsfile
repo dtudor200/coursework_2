@@ -21,7 +21,7 @@ node {
 
 
            stage "Deploy to Kube"
-              build 'Kubernettes'
+              build 'kubernetts2'
               echo 'Deploy to Kubernettes'
           
               }
