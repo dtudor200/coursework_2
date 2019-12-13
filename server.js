@@ -1,4 +1,3 @@
-
 var http = require('http');
 var requests=0;
 var podname= process.env.HOSTNAME;
@@ -8,7 +7,7 @@ var host;
 var handleRequest = function(request, response) {
   response.setHeader('Content-Type', 'text/plain');
   response.writeHead(200);
-  response.write("Big Hello World 2! | Running on: ");
+  response.write("Big Hello World 3!!!!!!!! The day after the election! | Running on: ");
   response.write(host);
   response.end(" | v=1\n");
   console.log("Running On:" ,host, "| Total Requests:", ++requests,"| App Uptime:", (new Date() - startTime)/1000 , "seconds", "| Log Time:",new Date());
