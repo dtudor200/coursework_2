@@ -4,7 +4,7 @@ node {
                echo 'Checkout SCM'
                               
            stage "Build VM" 
-               build 'BuildVM
+               build 'BuildVM'	
                echo 'Build of VM Complete'
               
              
